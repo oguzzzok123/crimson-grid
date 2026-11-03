@@ -150,15 +150,3 @@
 	var/returntext = "[disttext],[dirtext], at [place]."
 
 	return returntext
-
-/datum/action/cooldown/power/gift/berserking
-	name = "Go berserk"
-	desc = "Try enter frenzy mode, making you stronger."
-	button_icon_state = "primal_anger"
-	rage_cost = 0
-
-/datum/action/cooldown/power/gift/berserking/Activate(atom/target)
-	. = ..()
-	var/mob/living/owner = astype(src.owner)
-	enter_frenzy_mode(owner, source = "Manual")
-
